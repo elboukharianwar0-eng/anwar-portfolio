@@ -34,11 +34,14 @@ npm run lint    # ESLint
 | Variable                        | Required | Purpose                                                        |
 | ------------------------------- | -------- | -------------------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL`          | No       | Canonical site URL used for sitemap, robots, and Open Graph.   |
-| `NEXT_PUBLIC_CONTACT_ENDPOINT`  | No       | POST endpoint for the contact form (e.g. Formspree endpoint).  |
+| `NEXT_PUBLIC_CONTACT_ENDPOINT`  | No       | External POST endpoint for the contact form (overrides the built-in `/api/contact` route). |
+| `RESEND_API_KEY`                | No       | Resend API key. When set, the form sends emails via the built-in `/api/contact` route. |
+| `CONTACT_TO`                    | No       | Inbox for contact messages (defaults to `elboukharianwar0@gmail.com`). |
+| `CONTACT_FROM`                  | No       | Sender shown on messages (defaults to `Anwar Portfolio <onboarding@resend.dev>`). |
 
 Copy `.env.example` to `.env.local` and fill in as needed. Without a contact
-endpoint the form validates client-side and shows an honest notice instead of
-pretending to send email.
+endpoint or `RESEND_API_KEY` the form validates client-side and shows an honest
+notice instead of pretending to send email.
 
 Social links (GitHub, Fiverr, Email) live in `data/social.ts`.
 Set real URLs there when ready; empty URLs fall back to the contact section.

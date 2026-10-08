@@ -15,16 +15,18 @@ export type ContactResult =
 export async function submitContact(
   payload: ContactPayload,
 ): Promise<ContactResult> {
-  if (!contactEndpoint) {
-    return { status: "not-configured" };
-  }
+  const endpoint = contactEndpoint || "/api/contact";
 
   try {
-    const response = await fetch(contactEndpoint, {
+    const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
+
+    if (response.status === 503) {
+      return { status: "not-configured" };
+    }
 
     if (!response.ok) {
       return {
