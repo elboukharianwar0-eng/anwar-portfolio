@@ -17,6 +17,8 @@ export const site = {
     "freelance developer",
   ],
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  announcement:
+    "I'm the kind of person that if I don't know something, I would say I don't — but I promise that I can find the answer.",
 } as const;
 
 export const contactEndpoint =

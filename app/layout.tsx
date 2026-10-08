@@ -4,6 +4,7 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { TopBanner } from "@/components/TopBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -95,6 +96,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
+        <TopBanner />
         <Navbar />
         {children}
         <Footer />
