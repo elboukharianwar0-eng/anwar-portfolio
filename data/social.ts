@@ -12,7 +12,7 @@ export const socialLinks: Record<SocialKey, SocialLink> = {
     label: "GitHub",
     url: "https://github.com/elboukharianwar0-eng",
   },
-  fiverr: { key: "fiverr", label: "Fiverr", url: "" },
+  fiverr: { key: "fiverr", label: "Fiverr", url: "https://www.fiverr.com/elboukhari_" },
   email: {
     key: "email",
     label: "Email",
